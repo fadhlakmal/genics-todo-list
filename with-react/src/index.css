@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card-list {
+    @apply flex p-12;
+  }
+
+  .card {
+    @apply flex relative flex-col h-[350px] w-[400px] min-w-[250px] p-6 rounded-lg bg-[#17141d] shadow-xl transition duration-200;
+  }
+
+  .card:hover {
+    @apply transform translate-y-[-1rem];
+  }
+
+  .card:hover ~ .card {
+    @apply transform translate-x-[130px];
+  }
+
+  .card:not(:first-child) {
+    @apply ml-[-130px];
+  }
+
+  .card-author {
+    @apply relative grid grid-cols-[75px,1fr] items-center mt-12;
+  }
+
+  .delete-text {
+      @apply font-normal font-semibold text-[#7a7a8c];
+  }
+
+  .card-header:hover {
+    @apply bg-gradient-to-r from-[#4e90fc] to-[#7ae1d2] text-transparent bg-clip-text;
+  }
+}
